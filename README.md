@@ -5,22 +5,29 @@ pry-3p-cloud hecho por Genesis Simbaña, Giovanna Soria, Nohely Villegas
 
 Este proyecto consiste en un sistema basado en arquitectura de microservicios, desplegado en una máquina virtual (VM) de Azure utilizando contenedores Docker. El sistema incluye una capa de presentación (frontend) desarrollada en React, dos microservicios (uno para la gestión de usuarios y otro para la gestión de cursos), y dos bases de datos (MySQL y PostgreSQL).
 
+Aquí tienes la estructura correctamente formateada para que se vea bien en Markdown:  
+
+
 ## Estructura del Proyecto
 
 El proyecto está organizado de la siguiente manera:
 
+```
 proyecto/
-├── docker-compose.yml    # Archivo de configuración de Docker Compose
-├── microservicios-frontend/  # Carpeta del frontend (React)
-│   ├── Dockerfile        # Dockerfile para el frontend
-│   ├── package.json      # Dependencias del frontend
-│   └── src/              # Código fuente del frontend
-├── micro_usuarios/       # Carpeta del microservicio de usuarios
-│   ├── Dockerfile        # Dockerfile para el microservicio de usuarios
-│   └── .env              # Variables de entorno para el microservicio de usuarios
-├── micro_cursos/         # Carpeta del microservicio de cursos
-│   ├── Dockerfile        # Dockerfile para el microservicio de cursos
-│   └── .env              # Variables de entorno para el microservicio de cursos
+├── docker-compose.yml          # Archivo de configuración de Docker Compose
+├── microservicios-frontend/    # Carpeta del frontend (React)
+│   ├── Dockerfile              # Dockerfile para el frontend
+│   ├── package.json            # Dependencias del frontend
+│   └── src/                    # Código fuente del frontend
+├── micro_usuarios/             # Carpeta del microservicio de usuarios
+│   ├── Dockerfile              # Dockerfile para el microservicio de usuarios
+│   ├── .env                    # Variables de entorno para el microservicio de usuarios
+│   └── src/                    # Código fuente del microservicio de usuarios
+├── micro_cursos/               # Carpeta del microservicio de cursos
+│   ├── Dockerfile              # Dockerfile para el microservicio de cursos
+│   ├── .env                    # Variables de entorno para el microservicio de cursos
+│   └── src/                    # Código fuente del microservicio de cursos
+```
 
 
 ## Requisitos
