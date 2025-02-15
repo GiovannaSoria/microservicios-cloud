@@ -1,0 +1,96 @@
+
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: sisdb2025
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    networks:
+      - my-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: sisdb2025
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  micro-usuarios:
+    build:
+      context: ./micro_usuarios
+    image: micro-usuarios:latest
+    container_name: micro-usuarios
+    env_file:
+      - ./micro_usuarios/.env
+    ports:
+      - "8004:8004"
+    networks:
+      - my-network
+    depends_on:
+      - mysql
+    restart: always
+
+  micro-cursos:
+    build:
+      context: ./micro_cursos
+    image: micro-cursos:latest
+    container_name: micro-cursos
+    env_file:
+      - ./micro_cursos/.env
+    ports:
+      - "8002:8002"
+    networks:
+      - my-network
+    depends_on:
+      - postgres
+    restart: always
+
+  frontend:
+    build:
+      context: ./microservicios-frontend
+    container_name: frontend-container
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+      - PORT=80
+    networks:
+      - my-network
+    restart: always  
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  postgres-data:
