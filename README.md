@@ -1,8 +1,6 @@
 # microservicios-cloud
-pry-3p-cloud hecho por Genesis Simbaña, Giovanna Soria, Nohely Villegas
-Aquí tienes el README listo para copiar y pegar en un solo bloque:  
+pry-3p-cloud hecho por Genesis Simbaña, Giovanna Soria, Nohely Villegas  
 
-```markdown
 # Sistema de Microservicios con Docker y Azure
 
 Este proyecto consiste en un sistema basado en arquitectura de microservicios, desplegado en una máquina virtual (VM) de Azure utilizando contenedores Docker. El sistema incluye una capa de presentación (frontend) desarrollada en React, dos microservicios (uno para la gestión de usuarios y otro para la gestión de cursos), y dos bases de datos (MySQL y PostgreSQL).
@@ -11,7 +9,6 @@ Este proyecto consiste en un sistema basado en arquitectura de microservicios, d
 
 El proyecto está organizado de la siguiente manera:
 
-```
 proyecto/
 ├── docker-compose.yml    # Archivo de configuración de Docker Compose
 ├── microservicios-frontend/  # Carpeta del frontend (React)
@@ -24,7 +21,7 @@ proyecto/
 ├── micro_cursos/         # Carpeta del microservicio de cursos
 │   ├── Dockerfile        # Dockerfile para el microservicio de cursos
 │   └── .env              # Variables de entorno para el microservicio de cursos
-```
+
 
 ## Requisitos
 
