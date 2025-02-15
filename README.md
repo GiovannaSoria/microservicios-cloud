@@ -92,12 +92,12 @@ chmod +x micro_usuarios/mvnw
 - **Frontend:** Accede a la interfaz de usuario desde un navegador web usando la IP pública de la VM:
 
   ```
-  http://<IP_PUBLICA>:3000
+  http://57.154.187.103:3000
   ```
 
 - **Microservicios:**
-  - Micro-Usuarios: `http://<IP_PUBLICA>:8004`
-  - Micro-Cursos: `http://<IP_PUBLICA>:8002`
+  - Micro-Usuarios: `http://57.154.187.103:8004`
+  - Micro-Cursos: `http://57.154.187.103:8002`
 
 ## Pruebas de Funcionalidad
 
