@@ -5,9 +5,6 @@ pry-3p-cloud hecho por Genesis Simbaña, Giovanna Soria, Nohely Villegas
 
 Este proyecto consiste en un sistema basado en arquitectura de microservicios, desplegado en una máquina virtual (VM) de Azure utilizando contenedores Docker. El sistema incluye una capa de presentación (frontend) desarrollada en React, dos microservicios (uno para la gestión de usuarios y otro para la gestión de cursos), y dos bases de datos (MySQL y PostgreSQL).
 
-Aquí tienes la estructura correctamente formateada para que se vea bien en Markdown:  
-
-
 ## Estructura del Proyecto
 
 El proyecto está organizado de la siguiente manera:
@@ -55,7 +52,7 @@ proyecto/
 Copia los archivos del proyecto desde tu máquina local a la VM:
 
 ```bash
-scp -r "ruta/local/del/proyecto" mike@57.154.187.103:/home/mike/
+scp -r "C:\Users\giova\OneDrive\Escritorio\7mo\DISTRIBUIDAS\P3\pry\respaldo\pry-3p" mike@57.154.187.103:/home/mike/
 ```
 
 ### 3. Configuración de Permisos
@@ -69,19 +66,19 @@ chmod +x micro_usuarios/mvnw
 
 ## Despliegue con Docker Compose
 
-1. Navega a la carpeta del proyecto en la VM:
+1. Navegar a la carpeta del proyecto en la VM:
 
    ```bash
    cd pry-3p-cloud
    ```
 
-2. Ejecuta Docker Compose para construir y levantar los contenedores:
+2. Ejecutar Docker Compose para construir y levantar los contenedores:
 
    ```bash
    sudo docker compose up -d --build
    ```
 
-3. Verifica que los contenedores estén en ejecución:
+3. Verificar que los contenedores estén en ejecución:
 
    ```bash
    sudo docker ps
@@ -89,7 +86,7 @@ chmod +x micro_usuarios/mvnw
 
 ## Acceso al Sistema
 
-- **Frontend:** Accede a la interfaz de usuario desde un navegador web usando la IP pública de la VM:
+- **Frontend:** Acceder a la interfaz de usuario desde un navegador web usando la IP pública de la VM:
 
   ```
   http://57.154.187.103:3000
